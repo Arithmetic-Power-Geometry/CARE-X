@@ -1,0 +1,6 @@
+numpy>=2.0
+pandas>=2.2
+matplotlib>=3.9
+networkx>=3.3
+gradio>=5.0
+pytest>=8.0

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: CARE-X: Capability-Aware Reliable and Explainable AI for Healthcare Operations
+message: "If you use CARE-X, please cite this software and the associated research article."
+type: software
+authors:
+  - family-names: Akhtar
+    given-names: Mohammad Amir Khusru
+    orcid: https://orcid.org/0000-0002-3432-4199
+year: 2026
+license: Apache-2.0
+repository-code: https://github.com/Arithmetic-Power-Geometry/CARE-X
+version: 1.0.0

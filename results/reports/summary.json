@@ -1,0 +1,14 @@
+{
+  "n_cases": 2048,
+  "baseline_safe_completion": 0.0,
+  "full_safe_completion": 1.0,
+  "absolute_gain": 1.0,
+  "higher_order_absolute_mass": 0.72265625,
+  "max_exact_reconstruction_error": 0.0,
+  "heldout_order3_error": 0.02783203125,
+  "unsafe_action_rate_without_rules": 0.27978515625,
+  "stress_order3_error_mean": 0.0265234375,
+  "stress_order3_error_sd": 0.007404126704430542,
+  "stress_unsafe_without_rules_mean": 0.2879296875,
+  "stress_unsafe_without_rules_sd": 0.018981788044430372
+}
