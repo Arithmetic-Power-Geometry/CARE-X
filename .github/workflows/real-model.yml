@@ -12,7 +12,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      - run: pip install numpy pandas matplotlib pytest
+      - run: pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -r requirements-real-model.txt
       - run: python -m pytest -q
       - run: python experiments/run_real_model.py
