@@ -12,3 +12,9 @@ jobs:
       - run: python -m pytest -q
       - run: python experiments/run_all.py
       - run: python experiments/run_learned_model.py --outdir results/real_model
+      - uses: actions/upload-artifact@v4
+        with:
+          name: carex-reproduction
+          path: |
+            results/
+            data/
