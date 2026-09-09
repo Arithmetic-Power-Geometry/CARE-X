@@ -1,0 +1,22 @@
+{
+  "model": "google/flan-t5-small",
+  "model_weights_fixed": true,
+  "counterbalanced_action_order": true,
+  "n_cases": 48,
+  "n_conditions": 16,
+  "n_evaluations": 768,
+  "baseline_safe_decision_accuracy": 0.0625,
+  "baseline_safe_decision_ci95": [0.0, 0.14583333333333334],
+  "full_safe_decision_accuracy": 0.3125,
+  "full_safe_decision_ci95": [0.1875, 0.4375],
+  "full_productive_completion_rate": 0.25,
+  "full_unsafe_attempt_rate": 0.1875,
+  "rules_only_safe_decision_accuracy": 0.25,
+  "rules_only_productive_completion_rate": 0.0,
+  "higher_order_absolute_mass": 0.6458333333333335,
+  "order2_heldout_error": 0.1875,
+  "order3_heldout_error": 0.04166666666666674,
+  "max_exact_reconstruction_error": 5.551115123125783e-17,
+  "unsafe_attempt_rate_without_rules_RIA": 0.25,
+  "scope": "Synthetic, non-diagnostic operational workflow experiment with a fixed public language model; not a clinical-effectiveness study."
+}
