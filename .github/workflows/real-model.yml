@@ -7,6 +7,12 @@ jobs:
   real-model:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [google/flan-t5-small, google/flan-t5-base]
+    env:
+      CAREX_MODEL_ID: ${{ matrix.model }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,5 +25,5 @@ jobs:
       - run: python experiments/run_real_model.py
       - uses: actions/upload-artifact@v4
         with:
-          name: carex-real-model-results
+          name: carex-real-model-${{ strategy.job-index }}
           path: results/real_model/
