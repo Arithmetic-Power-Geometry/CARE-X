@@ -1,0 +1,19 @@
+{
+  "model": "RandomForestClassifier (300 trees), frozen after training",
+  "training_cases": 14000,
+  "test_cases": 2048,
+  "frozen_full_feature_task_accuracy": 0.53759765625,
+  "baseline_safe_completion": 0.02197265625,
+  "full_safe_completion": 0.70751953125,
+  "gain": 0.685546875,
+  "no_rules_safe_completion": 0.2236328125,
+  "no_rules_unsafe_attempt_rate": 0.31396484375,
+  "higher_order_absolute_mass": 0.2080078125,
+  "order3_heldout_error": 0.0068359375,
+  "max_exact_reconstruction_error": 0.0,
+  "replication_full_safe_mean": 0.7322265625,
+  "replication_full_safe_sd": 0.017081626248549604,
+  "replication_no_rules_unsafe_mean": 0.33369140625,
+  "replication_no_rules_unsafe_sd": 0.015536928983715177,
+  "scope": "learned-model operational validation on synthetic non-diagnostic workflow data; not a clinical validation or external pretrained LLM study"
+}
