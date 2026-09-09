@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "care-x"
-version = "1.0.0"
+version = "1.1.0"
 description = "Capability-aware auditing for assistive healthcare AI workflows"
 requires-python = ">=3.10"
-dependencies = ["numpy>=2.0", "pandas>=2.2", "matplotlib>=3.9", "networkx>=3.3", "gradio>=5.0"]
+dependencies = ["numpy>=2.0", "pandas>=2.2", "matplotlib>=3.9", "networkx>=3.3", "gradio>=5.0", "scikit-learn>=1.5"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
