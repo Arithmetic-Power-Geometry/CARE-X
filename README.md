@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ./reproduce.sh
 ```
 
-Generated outputs appear under `results/`.
+The experiment stack is pinned for exact reproduction. Generated outputs appear under `results/`, and CI uploads a `carex-reproduction` artifact containing the regenerated results and data.
 
 ## Reproduced synthetic benchmark
 
@@ -29,7 +29,9 @@ The reference simulator run uses 2,048 seeded synthetic, non-diagnostic workflow
 
 ## Frozen learned-model audit
 
-CARE-X also includes a second experiment in which a **RandomForestClassifier with 300 trees is trained once and then frozen**. The learned model is evaluated across the same 16 R/I/A/L intervention states on a disjoint 2,048-case synthetic operational test cohort. The full-feature fixed model has task-classification accuracy **0.53760**. Safe completion rises from **0.02197** at baseline to **0.70752** under RIAL; the 95% bootstrap interval for full safe completion is **[0.68846, 0.72706]**. With rules removed (RIA), technical completion remains **0.53760** but safe completion falls to **0.22363** and unsafe attempts rise to **0.31396** (95% bootstrap interval **[0.29393, 0.33545]**). Exact Möbius reconstruction error is **0**, higher-order absolute interaction mass is **0.20801**, and third-order held-out full-system prediction error is **0.00684**. Across ten independent 1,024-case test cohorts using the same frozen model, mean full safe completion is **0.73223 ± 0.01708** and mean unsafe-attempt rate without rules is **0.33369 ± 0.01554**.
+CARE-X also includes a second experiment in which a **RandomForestClassifier with 300 trees is trained once and then frozen**. The learned model is evaluated across the same 16 R/I/A/L intervention states on a disjoint 2,048-case synthetic operational test cohort. Under the pinned GitHub Actions environment, the full-feature fixed model has task-classification accuracy **0.54102**. Safe completion rises from **0.01953** at baseline to **0.70703** under RIAL; the 95% bootstrap interval for full safe completion is **[0.68749, 0.72607]**. With rules removed (RIA), technical completion remains **0.54102** but safe completion falls to **0.22363** and unsafe attempts rise to **0.31738** (95% bootstrap interval **[0.29785, 0.33691]**). Exact Möbius reconstruction error is **0**, higher-order absolute interaction mass is **0.20605**, and third-order held-out full-system prediction error is **0.00488**. Across ten independent 1,024-case test cohorts using the same frozen model, mean full safe completion is **0.73145 ± 0.01522** and mean unsafe-attempt rate without rules is **0.33369 ± 0.01417**.
+
+The principal single-channel removal losses in this learned-model audit are **0.00781 (R)**, **0.01563 (I)**, **0.36035 (A)**, and **0.48340 (L)**. Thus the learned model's technical predictions alone do not explain safe workflow capability: the surrounding action and rule channels dominate the observed safe-capability loss in this controlled benchmark.
 
 This learned-model experiment is a real fitted-model audit on synthetic non-diagnostic workflow data. It is **not** a clinical validation and is **not** presented as an external pretrained LLM study. Generated CSVs and figures are in `results/real_model/` and the executable experiment is `experiments/run_learned_model.py`.
 
