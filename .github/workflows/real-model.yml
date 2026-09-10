@@ -1,0 +1,29 @@
+name: CARE-X Real Model Experiment
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  real-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [google/flan-t5-small, google/flan-t5-base]
+    env:
+      CAREX_MODEL_ID: ${{ matrix.model }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy pandas matplotlib pytest
+      - run: pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements-real-model.txt
+      - run: python -m pytest -q
+      - run: python experiments/run_real_model.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: carex-real-model-${{ strategy.job-index }}
+          path: results/real_model/
